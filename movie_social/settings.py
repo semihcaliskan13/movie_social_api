@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'quote',
-    'movie'
+    'movie',
+    'account'
+
 ]
 
 MIDDLEWARE = [
@@ -110,7 +112,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-
+AUTH_USER_MODEL = 'account.MyUser'
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 

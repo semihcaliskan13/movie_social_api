@@ -33,7 +33,7 @@ class QuoteViewSet(viewsets.ModelViewSet):
         data.update(movie_json)
         return Response(data, status=status.HTTP_200_OK)
 
-    @action(url_path='users',detail=True, methods=['get'])
+    @action(url_path='users', detail=True, methods=['get'])
     def quotes_by_user_id(self, request, pk=None):
         quotes = Quote.objects.filter(user=pk)
         return Response("file missing.", status=status.HTTP_404_NOT_FOUND)

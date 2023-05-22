@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from movie_social.urls import UserSerializer
+from account.serializers import UserSerializer
 from quote.models import Quote
 from django.contrib.auth.models import User
 
