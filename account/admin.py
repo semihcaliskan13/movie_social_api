@@ -14,7 +14,7 @@ class MyUserAdmin(UserAdmin):
     ordering = ('email',)
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('identication_number',
+        ('Personal info', {'fields': (
                                       'first_name', 'last_name')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
                                     'groups', 'user_permissions')}),
@@ -23,6 +23,6 @@ class MyUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2','identication_number','first_name','last_name'),
+            'fields': ('email', 'password1', 'password2','first_name','last_name'),
         }),
     )

@@ -39,11 +39,9 @@ class UserManager(BaseUserManager):
 class MyUser(AbstractBaseUser, PermissionsMixin):
     username = None
     email = models.EmailField(unique=True, blank=False, null=False)
-    identication_number = models.CharField(unique=True, max_length=20, blank=False, null=False)
     is_staff = models.BooleanField(default=False)
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
-    address = models.CharField(max_length=255, null=True, blank=True)
     phone_number = models.CharField(max_length=10, null=True, blank=True)
     start_date = models.DateTimeField(null=True)
 
