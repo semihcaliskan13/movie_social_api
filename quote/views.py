@@ -8,17 +8,18 @@ from quote.models import Quote
 from quote.permissions import ListMoviesPermission
 from quote.utils import get_all_quotes, get_quote
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework import permissions
+from rest_framework.permissions import DjangoModelPermissions,AllowAny
 from quote.serializers import QuoteGetSerializer, QuotePostSerializer
-from rest_framework.permissions import *
+
 # Create your views here.
 
 
 class QuoteViewSet(viewsets.ModelViewSet):
-    
+    permission_classes = [DjangoModelPermissions]
     queryset = Quote.objects.all()
     serializer_class = QuotePostSerializer 
-    permission_classes = [ListMoviesPermission]
+    #permission_classes = [ListMoviesPermission]
+    
     
     
     
@@ -59,7 +60,7 @@ class QuoteViewSet(viewsets.ModelViewSet):
 
 
 @api_view(['GET'])
-@permission_classes((permissions.AllowAny,))
+@permission_classes((AllowAny,))
 def user_quotes(request, id):
 
     queryset = Quote.objects.all()
